@@ -14,13 +14,14 @@
 @box3_color: green;
 @box4_color: purple;
 
+
 nav {
     background-color: @nav_color;
     position: fixed;
+    .headSet();
 }
 
-
-nav, footer {
+.headSet {
     height: @header_height;
     width: @header_width;
     display: flex;
@@ -29,7 +30,12 @@ nav, footer {
 }
 
 body {
-    background-color: lightgray;
+    background-color: lighten(gray, 25% );
+}
+
+.boxBorder {
+    border-radius: @border_rad_unit;
+    border: solid 2px @border_color;
 }
 
 .wrapper {
@@ -37,38 +43,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
 
-#box1, #box2, #box3, #box4 {
-    border-radius: @border_rad_unit;
-    border: solid 2px @border_color;
-}
-
-#box1 {
-    background-color: @box1_color;
-    height: @base_size * 2;
-    width: @base_size * 2;
-}
-
-#box2 {
-    background-color: @box2_color;
-    height: @base_size * 4;
-    width: @base_size * 4;
-}
-
-#box3 {
-    background-color: @box3_color;
-    height: @base_size * 5;
-    width: @base_size * 5;
-}
-
-#box4 {
-    background-color: @box4_color;
-    height: @base_size;
-    width: @base_size;
+    #box1 {
+        .boxBorder();
+        background-color: @box1_color;
+        height: @base_size * 2;
+        width: @base_size * 2;
+    }
+    
+    #box2 {
+        .boxBorder();
+        background-color: @box2_color;
+        height: @base_size * 4;
+        width: @base_size * 4;
+    }
+    
+    #box3 {
+        .boxBorder();
+        background-color: @box3_color;
+        height: @base_size * 5;
+        width: @base_size * 5;
+    }
+    
+    #box4 {
+        .boxBorder();
+        background-color: @box4_color;
+        height: @base_size;
+        width: @base_size;
+    }
 }
 
 footer {
     background-color: @footer_color;
+    .headSet();
 }
 
